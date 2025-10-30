@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="style.css"> </head>
 <body>
     <div class="container my-5">
-        <h1 class="text-center text-primary mb-4">🧬 GeneRx Wellness Advisor: Personalized Analysis</h1>
+        <h1 class="text-center text-primary mb-4">🧬 GeneRx Wellness Advisor: AI-Powered Analysis</h1>
         
         <div class="card p-4 shadow-lg mb-5">
-            <h3 class="card-title text-secondary">1. Your Simulated Profile Input</h3>
+            <h3 class="card-title text-secondary">1. Your Simulated Genomic & Lifestyle Profile Input</h3>
             <form id="advisor-form">
                 
                 <div class="mb-3">
-                    <label for="cyp2d6_status" class="form-label">CYP2D6 Genotype (Drug Metabolism):</label>
+                    <label for="cyp2d6_status" class="form-label">**CYP2D6 Genotype** (Drug Metabolism):</label>
                     <select id="cyp2d6_status" class="form-select">
                         <option value="Normal">Normal Metabolizer</option>
                         <option value="Poor Metabolizer">Poor Metabolizer (Critical Risk Variant)</option>
@@ -24,12 +24,12 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="current_meds" class="form-label">Current Medications (Type 'Codeine' for a critical test):</label>
+                    <label for="current_meds" class="form-label">Current Medications (Type **'Codeine'** to trigger Critical Alert):</label>
                     <input type="text" id="current_meds" class="form-control" placeholder="e.g., Codeine, Aspirin...">
                 </div>
 
                 <div class="mb-3">
-                    <label for="cyp1a2_status" class="form-label">CYP1A2 Genotype (Caffeine Metabolism):</label>
+                    <label for="cyp1a2_status" class="form-label">**CYP1A2 Genotype** (Caffeine Metabolism):</label>
                     <select id="cyp1a2_status" class="form-select">
                         <option value="Fast Metabolizer">Fast Metabolizer</option>
                         <option value="Slow Metabolizer">Slow Metabolizer (Risk Variant)</option>
@@ -39,14 +39,22 @@
                 <div class="mb-3">
                     <label for="caffeine_post_12pm" class="form-label">Caffeine Intake Post-12 PM (mg):</label>
                     <input type="number" id="caffeine_post_12pm" class="form-control" value="0" min="0">
-                    <small class="form-text text-muted">A standard cup of coffee is about 100-150 mg.</small>
+                    <small class="form-text text-muted">Enter a value above 200mg to trigger an alert if you are a Slow Metabolizer.</small>
                 </div>
 
                  <div class="mb-3">
-                    <label for="mthfr_status" class="form-label">MTHFR Genotype (Folate Processing):</label>
+                    <label for="mthfr_status" class="form-label">**MTHFR Genotype** (Folate Processing):</label>
                     <select id="mthfr_status" class="form-select">
                         <option value="Normal">Normal Function</option>
-                        <option value="Reduced Function">Reduced Function (B-Vitamin Support Insight)</option>
+                        <option value="Reduced Function">Reduced Function (B-Vitamin Insight)</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="adh1b_status" class="form-label">**ADH1B Genotype** (Alcohol Metabolism):</label>
+                    <select id="adh1b_status" class="form-select">
+                        <option value="Normal">Normal Metabolism</option>
+                        <option value="Fast Metabolizer">Fast Metabolizer (Flush/Toxicity Risk)</option>
                     </select>
                 </div>
                 
