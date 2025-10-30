@@ -11,11 +11,11 @@
         <h1 class="text-center text-primary mb-4">🧬 GeneRx Wellness Advisor: AI-Powered Analysis</h1>
         
         <div class="card p-4 shadow-lg mb-5">
-            <h3 class="card-title text-secondary">1. Your Simulated Genomic & Lifestyle Profile Input</h3>
+            <h3 class="card-title text-secondary">🔬 1. Your Simulated Genomic & Lifestyle Profile</h3>
             <form id="advisor-form">
                 
                 <div class="mb-3">
-                    <label for="cyp2d6_status" class="form-label">**CYP2D6 Genotype** (Drug Metabolism):</label>
+                    <label for="cyp2d6_status" class="form-label">💊 **Drug Metabolism** (CYP2D6):</label>
                     <select id="cyp2d6_status" class="form-select">
                         <option value="Normal">Normal Metabolizer</option>
                         <option value="Poor Metabolizer">Poor Metabolizer (Critical Risk Variant)</option>
@@ -24,12 +24,12 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="current_meds" class="form-label">Current Medications (Type **'Codeine'** to trigger Critical Alert):</label>
+                    <label for="current_meds" class="form-label">📝 Current Medications (Type **'Codeine'** for Critical Alert Test):</label>
                     <input type="text" id="current_meds" class="form-control" placeholder="e.g., Codeine, Aspirin...">
                 </div>
 
                 <div class="mb-3">
-                    <label for="cyp1a2_status" class="form-label">**CYP1A2 Genotype** (Caffeine Metabolism):</label>
+                    <label for="cyp1a2_status" class="form-label">☕ **Caffeine Metabolism** (CYP1A2):</label>
                     <select id="cyp1a2_status" class="form-select">
                         <option value="Fast Metabolizer">Fast Metabolizer</option>
                         <option value="Slow Metabolizer">Slow Metabolizer (Risk Variant)</option>
@@ -37,13 +37,13 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="caffeine_post_12pm" class="form-label">Caffeine Intake Post-12 PM (mg):</label>
+                    <label for="caffeine_post_12pm" class="form-label">🌙 Caffeine Intake Post-12 PM (mg):</label>
                     <input type="number" id="caffeine_post_12pm" class="form-control" value="0" min="0">
                     <small class="form-text text-muted">Enter a value above 200mg to trigger an alert if you are a Slow Metabolizer.</small>
                 </div>
 
                  <div class="mb-3">
-                    <label for="mthfr_status" class="form-label">**MTHFR Genotype** (Folate Processing):</label>
+                    <label for="mthfr_status" class="form-label">🥬 **Folate Processing** (MTHFR):</label>
                     <select id="mthfr_status" class="form-select">
                         <option value="Normal">Normal Function</option>
                         <option value="Reduced Function">Reduced Function (B-Vitamin Insight)</option>
@@ -51,14 +51,16 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="adh1b_status" class="form-label">**ADH1B Genotype** (Alcohol Metabolism):</label>
+                    <label for="adh1b_status" class="form-label">🍷 **Alcohol Metabolism** (ADH1B):</label>
                     <select id="adh1b_status" class="form-select">
                         <option value="Normal">Normal Metabolism</option>
                         <option value="Fast Metabolizer">Fast Metabolizer (Flush/Toxicity Risk)</option>
                     </select>
                 </div>
                 
-                <button type="submit" class="btn btn-primary btn-lg w-100 mt-4">Run Personalized AI Analysis</button>
+                <button type="submit" class="btn btn-primary btn-lg w-100 mt-4 shadow">
+                    ▶️ Run Personalized AI Diagnosis
+                </button>
             </form>
         </div>
 
@@ -66,7 +68,7 @@
             <h2 class="text-center text-success mb-4">✅ Analysis Complete: Your Personalized Report</h2>
             
             <div id="risk-gauge-container" class="mb-4">
-                <h3 class="text-center text-secondary mb-3">Genomic Risk Score Visualization</h3>
+                <h3 class="text-center text-secondary mb-3">📈 Genomic Risk Score Visualization</h3>
                 <div class="progress" style="height: 40px; border-radius: 20px;">
                     <div id="risk-gauge-bar" 
                          class="progress-bar" 
@@ -78,7 +80,7 @@
                         0%
                     </div>
                 </div>
-                <p class="text-center mt-2 text-muted">Total Potential Risk Score: 225 (Maximum impact if all 4 genes are highly adverse)</p>
+                <p class="text-center mt-2 text-muted small">Total Potential Risk Score: 225 (Maximum impact if all 4 genes are highly adverse)</p>
             </div>
             <div id="alerts-container">
                 </div>

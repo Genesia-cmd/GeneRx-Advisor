@@ -1,5 +1,7 @@
 body {
-    background-color: #f0f2f5; /* Light grey background */
+    /* Use a light gradient for a modern, subtle background */
+    background: linear-gradient(135deg, #e0f7fa 0%, #f0f2f5 100%);
+    min-height: 100vh; /* Ensures the background covers the whole screen */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -7,48 +9,54 @@ body {
     max-width: 900px;
 }
 
+/* Enhances the main project title */
+h1 {
+    font-weight: 700;
+    color: #007bff !important; /* Primary blue for main heading */
+    padding-bottom: 10px;
+    border-bottom: 3px solid #007bff; /* Adds a clean separator line */
+    letter-spacing: 0.5px;
+}
+
 .card {
-    border-radius: 15px; /* Rounded corners */
+    border-radius: 15px;
     border: none;
 }
 
 .shadow-lg {
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important; /* Stronger shadow for depth */
-}
-
-h1 {
-    font-weight: 700;
-    color: #007bff !important; /* Primary blue for main heading */
+    /* Stronger, softer shadow for a more professional 'lift' */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important; 
 }
 
 .alert-heading {
     font-weight: 600;
 }
 
-/* Smooth transition for the progress bar animation (NEW) */
+/* Smooth transition for the progress bar animation */
 .progress-bar {
     transition: width 0.8s ease-in-out; 
 }
 
-/* Custom colors for a sleek look */
+/* Custom colors for a sleek look (keep these for functionality) */
 .alert-danger {
-    background-color: #f8d7da;
+    background-color: #fbe6e8; /* Lighter shade of red */
     border-color: #f5c6cb;
     color: #721c24;
 }
 .alert-warning {
-    background-color: #fff3cd;
+    background-color: #fff8e1; /* Lighter shade of yellow */
     border-color: #ffeeba;
     color: #856404;
 }
 .alert-info {
-    background-color: #d1ecf1;
+    background-color: #d8f1f5; /* Lighter shade of blue */
     border-color: #bee5eb;
     color: #0c5460;
 }
 .btn-primary {
     background-color: #007bff;
     border-color: #007bff;
+    transition: background-color 0.3s;
 }
 .btn-primary:hover {
     background-color: #0056b3;
