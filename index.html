@@ -62,4 +62,29 @@
             </form>
         </div>
 
-        <div id="results-panel" class="card p-4 shadow
+        <div id="results-panel" class="card p-4 shadow-lg" style="display: none;">
+            <h2 class="text-center text-success mb-4">✅ Analysis Complete: Your Personalized Report</h2>
+            
+            <div id="risk-gauge-container" class="mb-4">
+                <h3 class="text-center text-secondary mb-3">Genomic Risk Score Visualization</h3>
+                <div class="progress" style="height: 40px; border-radius: 20px;">
+                    <div id="risk-gauge-bar" 
+                         class="progress-bar" 
+                         role="progressbar" 
+                         aria-valuenow="0" 
+                         aria-valuemin="0" 
+                         aria-valuemax="225"
+                         style="width: 0%; font-size: 1.2rem; font-weight: bold;">
+                        0%
+                    </div>
+                </div>
+                <p class="text-center mt-2 text-muted">Total Potential Risk Score: 225 (Maximum impact if all 4 genes are highly adverse)</p>
+            </div>
+            <div id="alerts-container">
+                </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
