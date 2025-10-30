@@ -65,7 +65,7 @@ function runAnalysis(event) {
     document.getElementById('results-panel').style.display = 'block'; // Show the results box
 
     let alertsFound = false;
-    let totalRiskScore = 0; // Initialize the risk score for the upgrade!
+    let totalRiskScore = 0; 
 
     // 2. Loop through every rule and check the conditions:
     ruleLibrary.forEach(rule => {
@@ -137,23 +137,34 @@ function displaySummaryPanel(score, alertsFound) {
     // Max theoretical score is 225
     const MAX_SCORE = 225; 
     const riskPercentage = Math.min(100, Math.round((score / MAX_SCORE) * 100));
-
-    // --- 2. Update the Dynamic Risk Gauge (The Fancy Part) ---
-    const gaugeBar = document.getElementById('risk-gauge-bar');
-    gaugeBar.style.width = `${riskPercentage}%`;
-    gaugeBar.setAttribute('aria-valuenow', score);
-    gaugeBar.textContent = `Score: ${score} (${riskPercentage}%)`;
     
-    // Dynamically change the color of the bar based on the score
+    // Circumference calculation for the SVG Gauge
+    const CIRCUMFERENCE = 283; 
+    const offset = CIRCUMFERENCE - (riskPercentage / 100) * CIRCUMFERENCE;
+    
+    // Set the color for the SVG gauge based on the score
+    let strokeColor = '#28a745'; // Default: Success (Green)
     if (score >= 100) {
-        gaugeBar.className = 'progress-bar bg-danger';
+        strokeColor = '#dc3545'; // Danger (Red)
     } else if (score >= 50) {
-        gaugeBar.className = 'progress-bar bg-warning';
+        strokeColor = '#ffc107'; // Warning (Yellow/Orange)
     } else if (score > 0) {
-        gaugeBar.className = 'progress-bar bg-info';
-    } else {
-        gaugeBar.className = 'progress-bar bg-success';
+        strokeColor = '#007bff'; // Info (Blue)
     }
+
+    // --- 2. Update the Dynamic Risk Gauge (The Ultra Graphical Part) ---
+    const gaugeCircle = document.getElementById('risk-gauge-circle');
+    const gaugeScoreText = document.getElementById('risk-gauge-score');
+    const gaugePercentageText = document.querySelector('.risk-circle-svg text:nth-child(4)');
+
+    // Apply the animated changes
+    gaugeCircle.style.strokeDashoffset = offset; // Use strokeDashoffset for correct offset
+    gaugeCircle.style.strokeDasharray = `${CIRCUMFERENCE}, ${CIRCUMFERENCE}`; // Ensure the dasharray is fixed for a clean circle
+    gaugeCircle.setAttribute('stroke', strokeColor);
+    
+    // Update text
+    gaugeScoreText.textContent = score;
+    gaugePercentageText.textContent = `Risk Score (${riskPercentage}%)`;
 
 
     // --- 3. Build and Insert the Text Summary Panel ---

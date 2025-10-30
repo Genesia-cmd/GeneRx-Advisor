@@ -1,64 +1,110 @@
+/* --- Custom Variables for Easy Styling --- */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --background-light: #f4f7f9;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
 body {
     /* Use a light gradient for a modern, subtle background */
-    background: linear-gradient(135deg, #e0f7fa 0%, #f0f2f5 100%);
-    min-height: 100vh; /* Ensures the background covers the whole screen */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--background-light) 0%, #ffffff 100%);
+    min-height: 100vh;
+    font-family: var(--font-family);
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .container {
     max-width: 900px;
 }
 
-/* Enhances the main project title */
+/* --- Main Typography and Header --- */
 h1 {
-    font-weight: 700;
-    color: #007bff !important; /* Primary blue for main heading */
+    font-weight: 800; /* Extra bold title */
+    color: var(--primary-color) !important;
     padding-bottom: 10px;
-    border-bottom: 3px solid #007bff; /* Adds a clean separator line */
+    margin-bottom: 40px !important;
+    border-bottom: 4px solid var(--primary-color); /* Clean separator line */
     letter-spacing: 0.5px;
+    text-transform: uppercase;
 }
-
-.card {
-    border-radius: 15px;
-    border: none;
-}
-
-.shadow-lg {
-    /* Stronger, softer shadow for a more professional 'lift' */
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important; 
-}
-
-.alert-heading {
+h3 {
     font-weight: 600;
+    color: var(--secondary-color);
+    border-left: 5px solid var(--primary-color); /* Visual marker for section header */
+    padding-left: 10px;
+    margin-bottom: 25px;
 }
 
-/* Smooth transition for the progress bar animation */
-.progress-bar {
-    transition: width 0.8s ease-in-out; 
+/* --- Card and Input Styling --- */
+.card {
+    border-radius: 18px; /* Slightly more rounded */
+    border: 1px solid #e0e6ed; /* Subtle border */
+}
+.shadow-lg {
+    box-shadow: var(--card-shadow) !important; /* Strong, professional shadow */
+}
+.form-control, .form-select {
+    border-radius: 8px;
+    padding: 10px 15px;
+    /* Final subtle input field polish */
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
 }
 
-/* Custom colors for a sleek look (keep these for functionality) */
-.alert-danger {
-    background-color: #fbe6e8; /* Lighter shade of red */
-    border-color: #f5c6cb;
-    color: #721c24;
-}
-.alert-warning {
-    background-color: #fff8e1; /* Lighter shade of yellow */
-    border-color: #ffeeba;
-    color: #856404;
-}
-.alert-info {
-    background-color: #d8f1f5; /* Lighter shade of blue */
-    border-color: #bee5eb;
-    color: #0c5460;
-}
+/* --- Button and Call to Action --- */
 .btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
-    transition: background-color 0.3s;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    font-weight: bold;
+    border-radius: 10px;
+    transition: background-color 0.3s, transform 0.2s;
 }
 .btn-primary:hover {
     background-color: #0056b3;
     border-color: #0056b3;
+    transform: translateY(-2px); /* Subtle lift on hover */
+}
+
+/* --- Alert / Result Styling --- */
+.alert {
+    border-radius: 12px;
+    padding: 20px;
+    border-left: 8px solid; /* Strong left border for visual weight */
+}
+.alert-heading {
+    font-weight: 700;
+}
+.alert-danger {
+    background-color: #fcebeb; /* Very light background for less shock */
+    border-left-color: var(--danger-color);
+    color: #a00000;
+}
+.alert-warning {
+    background-color: #fff9e6;
+    border-left-color: var(--warning-color);
+    color: #946900;
+}
+.alert-info {
+    background-color: #e6f6f9;
+    border-left-color: #00bcd4; /* Brighter blue for info */
+    color: #006064;
+}
+.alert-success {
+    background-color: #e7f7e9;
+    border-left-color: var(--success-color);
+    color: #1e6c38;
+}
+
+/* --- SVG Risk Gauge Styling (ULTRA GRAPHICAL) --- */
+.risk-circle-svg {
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1)); /* Subtle drop shadow for the graphic */
 }
