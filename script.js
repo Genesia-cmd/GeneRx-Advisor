@@ -9,7 +9,7 @@ const ruleLibrary = [
         Alert_Level: "CRITICAL",
         score_impact: 100, // Highest risk score
         Alert_Title: "Ineffective Analgesia & Toxicity Risk",
-        Alert_Message: "This genotype prevents the conversion of **Codeine** to its active form (morphine). **ACTION:** Avoid use. Alternative non-opioid or non-CYP2D6 analgesics are recommended.",
+        Alert_Message: "This genotype prevents the conversion of Codeine to its active form (morphine). ACTION: Avoid use. Alternative non-opioid or non-CYP2D6 analgesics are recommended.",
         Citation_Source: "CPIC/PharmGKB Level 1A"
     },
     // Rule 2: Lifestyle Genomics (CYP1A2 and Caffeine)
@@ -21,7 +21,7 @@ const ruleLibrary = [
         Alert_Level: "HIGH_PRIORITY",
         score_impact: 50,
         Alert_Title: "Caffeine Metabolism & Sleep Risk",
-        Alert_Message: "Your slow caffeine clearance ($CYP1A2$) allows high levels to linger in your system. This dramatically increases the risk of insomnia and anxiety. **ACTION:** Shift all caffeine intake (especially >200mg) to **before 12 PM.**",
+        Alert_Message: "Your slow caffeine clearance (CYP1A2) allows high levels to linger in your system. This dramatically increases the risk of insomnia and anxiety. ACTION: Shift all caffeine intake (especially >200mg) to before 12 PM.",
         Citation_Source: "Journal of the American Medical Association, 2023"
     },
     // Rule 3: Wellness/Nutrigenomics (MTHFR)
@@ -32,7 +32,7 @@ const ruleLibrary = [
         Alert_Level: "LIFESTYLE_INSIGHT",
         score_impact: 25, // Lowest optimization score
         Alert_Title: "Folate Metabolism Support Required",
-        Alert_Message: "Your reduced MTHFR enzyme function may affect B-vitamin processing. **ACTION:** Focus on a diet rich in natural folate (leafy greens, lentils) and discuss a bioavailable B-vitamin supplement (methylfolate) with your physician.",
+        Alert_Message: "Your reduced MTHFR enzyme function may affect B-vitamin processing. ACTION: Focus on a diet rich in natural folate (leafy greens, lentils) and discuss a bioavailable B-vitamin supplement (methylfolate) with your physician.",
         Citation_Source: "NIH/CDC Guidance on MTHFR Polymorphisms"
     },
     // Rule 4: Alcohol Genomics (ADH1B)
@@ -43,7 +43,7 @@ const ruleLibrary = [
         Alert_Level: "HIGH_PRIORITY",
         score_impact: 50,
         Alert_Title: "Alcohol Flush & Discomfort Risk",
-        Alert_Message: "Your genetics cause rapid breakdown of ethanol, leading to a quick buildup of toxic acetaldehyde. **ACTION:** Limit intake to 1 drink per sitting to avoid flush, nausea, and potential increased long-term risk.",
+        Alert_Message: "Your genetics cause rapid breakdown of ethanol, leading to a quick buildup of toxic acetaldehyde. ACTION: Limit intake to 1 drink per sitting to avoid flush, nausea, and potential increased long-term risk.",
         Citation_Source: "NIAAA Guidelines on ADH1B Variants"
     }
 ];
@@ -193,24 +193,22 @@ function displayAlert(rule) {
 
     // Choose Bootstrap class and icon based on the alert level
     if (rule.Alert_Level === 'CRITICAL') {
-        alertClass = 'alert-danger'; // Red color
+        alertClass = 'alert-danger'; 
         icon = '⚠️';
     } else if (rule.Alert_Level === 'HIGH_PRIORITY') {
-        alertClass = 'alert-warning'; // Yellow/Orange color
+        alertClass = 'alert-warning'; 
         icon = '🚨';
     } else if (rule.Alert_Level === 'LIFESTYLE_INSIGHT') {
-        alertClass = 'alert-info'; // Blue color
+        alertClass = 'alert-info'; 
         icon = '💡';
     }
 
     const alertHtml = `
         <div class="alert ${alertClass} shadow-sm mb-4" role="alert">
             <h4 class="alert-heading">${icon} ${rule.Alert_Title} (${rule.RuleID})</h4>
-            <p>**${rule.Alert_Message}**</p>
-            <hr>
+            <p>${rule.Alert_Message}</p> <hr>
             <p class="mb-0 small text-muted">
-                **Background Support:** ${rule.Citation_Source}
-            </p>
+                Background Support: ${rule.Citation_Source} </p>
         </div>
     `;
     document.getElementById('alerts-container').insertAdjacentHTML('beforeend', alertHtml);
