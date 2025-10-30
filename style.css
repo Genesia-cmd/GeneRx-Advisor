@@ -1,0 +1,43 @@
+body {
+    background-color: #f0f2f5; /* Light grey background */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    max-width: 900px;
+}
+
+.card {
+    border-radius: 15px; /* Rounded corners */
+    border: none;
+}
+
+.shadow-lg {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important; /* Stronger shadow for depth */
+}
+
+h1 {
+    font-weight: 700;
+    color: #007bff !important; /* Primary blue for main heading */
+}
+
+.alert-heading {
+    font-weight: 600;
+}
+
+/* Custom colors for a sleek look */
+.alert-danger {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+.alert-warning {
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+    color: #856404;
+}
+.alert-info {
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+    color: #0c5460;
+}
