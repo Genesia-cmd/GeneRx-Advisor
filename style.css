@@ -25,6 +25,11 @@ h1 {
     font-weight: 600;
 }
 
+/* Smooth transition for the progress bar animation (NEW) */
+.progress-bar {
+    transition: width 0.8s ease-in-out; 
+}
+
 /* Custom colors for a sleek look */
 .alert-danger {
     background-color: #f8d7da;
